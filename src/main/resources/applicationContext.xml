@@ -7,9 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="energy_glow.TestBean">
-        <constructor-arg value="Damir"/>
+    <bean id="musicBean"
+          class="energy_glow.PopMusic">
     </bean>
 
 </beans>

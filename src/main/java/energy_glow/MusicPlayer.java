@@ -2,9 +2,11 @@ package energy_glow;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class MusicPlayer {
     private Music music;
     private String name;

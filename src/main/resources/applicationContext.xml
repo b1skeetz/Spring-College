@@ -18,7 +18,6 @@
         <property name="volume" value="30"/>
     </bean>
 
-
     <bean id="animal"
           class="energy_glow.Cat">
     </bean>
@@ -27,5 +26,4 @@
         <property name="animal" ref="animal"/>
         <property name="name" value="EnergyGlow"/>
     </bean>
-
 </beans>

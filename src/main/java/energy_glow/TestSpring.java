@@ -12,6 +12,9 @@ public class TestSpring {
         player.playMusic();
         System.out.println(player);
 
+        Owner owner = applicationContext.getBean("petOwner", Owner.class);
+        System.out.println(owner.getAnimal().voice());
+
         applicationContext.close();
     }
 }

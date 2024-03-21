@@ -6,4 +6,8 @@ public class RockMusic implements Music{
     public String getSong() {
         return "It's not me, it's you";
     }
+    @Override
+    public String toString() {
+        return getSong();
+    }
 }

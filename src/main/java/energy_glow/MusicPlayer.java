@@ -4,11 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
 public class MusicPlayer {
-    private Music music;
+    private List<Music> musicList = new ArrayList<>();
     private String name;
     private int volume;
 
@@ -16,11 +19,18 @@ public class MusicPlayer {
     }
 
     // IoC инверсия управления
-    public MusicPlayer(Music music) {
-        this.music = music;
+
+    public MusicPlayer(List<Music> musicList, String name, int volume) {
+        this.musicList = musicList;
+        this.name = name;
+        this.volume = volume;
     }
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        StringBuilder songs = new StringBuilder();
+        for (Music music : musicList) {
+            songs.append(music).append(" ");
+        }
+        System.out.println("Playing: " + songs);
     }
 }

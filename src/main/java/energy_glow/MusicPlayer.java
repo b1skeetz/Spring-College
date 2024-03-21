@@ -15,9 +15,14 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
+    private void OnInitialize(){
+        System.out.println("Music Player Init: " + name);
+    }
     public MusicPlayer() {
     }
-
+    private void Dispose(){
+        System.out.println("Music Player Delete: " + name);
+    }
     // IoC инверсия управления
 
     public MusicPlayer(List<Music> musicList, String name, int volume) {

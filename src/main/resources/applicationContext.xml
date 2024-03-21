@@ -30,7 +30,8 @@
     </bean>
 
     <bean id="musicPlayer"
-        class="energy_glow.MusicPlayer">
+        class="energy_glow.MusicPlayer"
+        scope="prototype">
         <property name="musicList" ref="musicList"/>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>

@@ -9,8 +9,12 @@ public class TestSpring {
         );
 
         MusicPlayer player = applicationContext.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer player2= applicationContext.getBean("musicPlayer", MusicPlayer.class);
+        player.setName("TestingName");
         player.playMusic();
+        player2.playMusic();
         System.out.println(player);
+        System.out.println(player2);
 
         Owner owner = applicationContext.getBean("petOwner", Owner.class);
         System.out.println(owner.getAnimal().voice());

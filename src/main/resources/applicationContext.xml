@@ -9,13 +9,14 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-<!--    <bean id="musicBeanClassic"-->
-<!--          class="energy_glow.ClassicalMusic"-->
-<!--    init-method="doMyInit"-->
-<!--    destroy-method="doMyDestroy">-->
     <bean id="musicBeanClassic"
-          class="energy_glow.ClassicalMusic">
-    </bean>
+          class="energy_glow.ClassicalMusic"
+    init-method="doMyInit"
+    destroy-method="doMyDestroy"
+    factory-method="getClassicalMusicInstance"/>
+<!--    <bean id="musicBeanClassic"-->
+<!--          class="energy_glow.ClassicalMusic">-->
+<!--    </bean>-->
     <bean id="musicBeanPop"
           class="energy_glow.PopMusic">
     </bean>

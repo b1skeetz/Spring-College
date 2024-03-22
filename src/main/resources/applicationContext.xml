@@ -9,47 +9,49 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBeanClassic"
-          class="energy_glow.ClassicalMusic"
-    init-method="doMyInit"
-    destroy-method="doMyDestroy"
-    factory-method="getClassicalMusicInstance"/>
+    <context:component-scan base-package="energy_glow"/>
+
 <!--    <bean id="musicBeanClassic"-->
-<!--          class="energy_glow.ClassicalMusic">-->
+<!--          class="energy_glow.ClassicalMusic"-->
+<!--    init-method="doMyInit"-->
+<!--    destroy-method="doMyDestroy"-->
+<!--    factory-method="getClassicalMusicInstance"/>-->
+<!--&lt;!&ndash;    <bean id="musicBeanClassic"&ndash;&gt;-->
+<!--&lt;!&ndash;          class="energy_glow.ClassicalMusic">&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+<!--    <bean id="musicBeanPop"-->
+<!--          class="energy_glow.PopMusic">-->
 <!--    </bean>-->
-    <bean id="musicBeanPop"
-          class="energy_glow.PopMusic">
-    </bean>
-    <bean id="musicBeanRock"
-          class="energy_glow.RockMusic">
-    </bean>
+<!--    <bean id="musicBeanRock"-->
+<!--          class="energy_glow.RockMusic">-->
+<!--    </bean>-->
 
-    <bean id="musicList" class="java.util.ArrayList">
-        <constructor-arg>
-            <list>
-                <ref bean="musicBeanClassic"/>
-                <ref bean="musicBeanPop"/>
-                <ref bean="musicBeanRock"/>
-            </list>
-        </constructor-arg>
-    </bean>
+<!--    <bean id="musicList" class="java.util.ArrayList">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <ref bean="musicBeanClassic"/>-->
+<!--                <ref bean="musicBeanPop"/>-->
+<!--                <ref bean="musicBeanRock"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
 
-    <bean id="musicPlayer"
-        class="energy_glow.MusicPlayer"
-          scope="prototype"
-    init-method="OnInitialize"
-    destroy-method="Dispose">
-        <property name="musicList" ref="musicList"/>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--        class="energy_glow.MusicPlayer"-->
+<!--          scope="prototype"-->
+<!--    init-method="OnInitialize"-->
+<!--    destroy-method="Dispose">-->
+<!--        <property name="musicList" ref="musicList"/>-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
-    <bean id="animal"
-          class="energy_glow.Cat">
-    </bean>
+<!--    <bean id="animal"-->
+<!--          class="energy_glow.Cat">-->
+<!--    </bean>-->
 
-    <bean id="petOwner" class="energy_glow.Owner">
-        <property name="animal" ref="animal"/>
-        <property name="name" value="EnergyGlow"/>
-    </bean>
+<!--    <bean id="petOwner" class="energy_glow.Owner">-->
+<!--        <property name="animal" ref="animal"/>-->
+<!--        <property name="name" value="EnergyGlow"/>-->
+<!--    </bean>-->
 </beans>

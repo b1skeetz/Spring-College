@@ -1,4 +1,4 @@
-package energy_glow;
+package energy_glow.Animals;
 
 import lombok.Getter;
 import lombok.Setter;

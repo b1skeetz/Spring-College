@@ -1,4 +1,4 @@
-package energy_glow;
+package energy_glow.Animals;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,9 +7,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Dog implements Animal{
+public class Cat implements Animal{
     @Override
     public String voice() {
-        return "bark";
+        return "meow";
     }
 }

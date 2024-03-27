@@ -47,10 +47,10 @@
 <!--    </bean>-->
 
 <!--    <bean id="animal"-->
-<!--          class="energy_glow.Cat">-->
+<!--          class="energy_glow.Animals.Cat">-->
 <!--    </bean>-->
 
-<!--    <bean id="petOwner" class="energy_glow.Owner">-->
+<!--    <bean id="petOwner" class="energy_glow.Animals.Owner">-->
 <!--        <property name="animal" ref="animal"/>-->
 <!--        <property name="name" value="EnergyGlow"/>-->
 <!--    </bean>-->

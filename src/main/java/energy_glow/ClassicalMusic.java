@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ClassicalMusic implements Music{
-    private String song;
+    private String song = "Moonlight Sonata";
     public void doMyInit(){
         System.out.println("Initialization of class " + this.getClass() + "...");
         song = "Rush E";
@@ -25,8 +25,7 @@ public class ClassicalMusic implements Music{
     }
     @Override
     public String getSong() {
-        //return song;
-        return "Moonlight Sonata";
+        return song;
     }
 
     @Override

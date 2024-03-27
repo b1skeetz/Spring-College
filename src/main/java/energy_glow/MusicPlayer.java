@@ -11,46 +11,26 @@ import org.springframework.stereotype.Component;
 @ToString
 @Component("myMusicPlayer")
 public class MusicPlayer {
-    //private List<Music> musicList = new ArrayList<>();
-    private Music music;
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
     private String name;
     private int volume;
 
-    private void OnInitialize(){
-        System.out.println("Music Player Init: " + name);
-    }
-    public MusicPlayer() {
-    }
-    private void Dispose(){
-        System.out.println("Music Player Delete: " + name);
-    }
-    // IoC инверсия управления
-
     @Autowired
-    public MusicPlayer(Music music) {
-        this.music = music;
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
-    public MusicPlayer(Music music, String name, int volume) {
-        this.music = music;
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, String name, int volume) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
         this.name = name;
         this.volume = volume;
     }
 
-    /*public MusicPlayer(List<Music> musicList, String name, int volume) {
-        this.musicList = musicList;
-        this.name = name;
-        this.volume = volume;
-    }*/
-
-    public void playMusic() {
-        System.out.println("Playing: " + music);
+    public String playMusic() {
+        return "{Playing: " + classicalMusic +
+                "\nPlaying: " + rockMusic + "}";
     }
-    /*public void playMusic() {
-        StringBuilder songs = new StringBuilder();
-        for (Music music : musicList) {
-            songs.append(music).append(" ");
-        }
-        System.out.println("Playing: " + songs);
-    }*/
 }

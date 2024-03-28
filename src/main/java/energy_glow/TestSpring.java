@@ -21,8 +21,8 @@ public class TestSpring {
 //
 //        Owner owner = applicationContext.getBean("petOwner", Owner.class);
 //        System.out.println(owner.getAnimal().voice());
-        MusicPlayer player = applicationContext.getBean("myMusicPlayer", MusicPlayer.class);
-        System.out.println(player.playMusic());
+//        MusicPlayer player = applicationContext.getBean("myMusicPlayer", MusicPlayer.class);
+//        System.out.println(player.playMusic());
 
         Computer computer = applicationContext.getBean("computer", Computer.class);
         System.out.println(computer);

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 public class Computer {
     private int id;
     private MusicPlayer musicPlayer;
+    private Genre genre = Genre.ROCK;
 
     @Autowired
     public Computer(MusicPlayer musicPlayer) {
@@ -20,6 +21,6 @@ public class Computer {
 
     @Override
     public String toString() {
-        return String.format("Computer %d: \n%s", id, musicPlayer.playMusic());
+        return String.format("Computer %d: \n%s", id, musicPlayer.playMusic(genre));
     }
 }

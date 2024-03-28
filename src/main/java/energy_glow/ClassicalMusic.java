@@ -3,31 +3,21 @@ package energy_glow;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 @Component
 @Qualifier("classicalMusic")
 public class ClassicalMusic implements Music{
-    private String song = "Moonlight Sonata";
-    public void doMyInit(){
-        System.out.println("Initialization of class " + this.getClass() + "...");
-        song = "Rush E";
-    }
+    private final List<String> songs = new ArrayList<>(Arrays.asList("Moonlight Sonata", "Turkish March",
+            "Dance of the Knights"));
+    private final Random random = new Random();
 
-    public void doMyDestroy(){
-        System.out.println("Distraction of class " + this.getClass() + "...");
-    }
-    private static ClassicalMusic instance;
-    private ClassicalMusic(){
-
-    }
-    public static ClassicalMusic getClassicalMusicInstance(){
-        if(instance == null){
-            instance = new ClassicalMusic();
-        }
-        return instance;
-    }
     @Override
     public String getSong() {
-        return song;
+        return songs.get(random.nextInt(songs.size()));
     }
 
     @Override

@@ -14,24 +14,21 @@ import org.springframework.stereotype.Component;
 public class MusicPlayer {
     private Music classicalMusic;
     private Music rockMusic;
-    private String name;
-    private int volume;
+    private Music popMusic;
 
     @Autowired
-    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusic, @Qualifier("rockMusic") Music rockMusic) {
+    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusic, @Qualifier("rockMusic") Music rockMusic, @Qualifier("popMusic") Music popMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
+        this.popMusic = popMusic;
     }
 
-    public MusicPlayer(Music classicalMusic, Music rockMusic, String name, int volume) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
-        this.name = name;
-        this.volume = volume;
-    }
-
-    public String playMusic() {
-        return "{Playing: " + classicalMusic +
-                "\nPlaying: " + rockMusic + "}";
+    public String playMusic(Genre type) {
+        switch(type){
+            case CLASSICAL: return classicalMusic.getSong();
+            case ROCK: return rockMusic.getSong();
+            case POP: return popMusic.getSong();
+            default: return "This genre doesn't exist!";
+        }
     }
 }

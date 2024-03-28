@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 @ToString
-@Component
+//@Component
 @Qualifier("popMusic")
 public class PopMusic implements Music{
     private final List<String> songs = new ArrayList<>(Arrays.asList("Hurricane", "Diamonds", "Lovely"));

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 @ToString
-@Component
+//@Component
 //@Scope("prototype")
 @Qualifier("classicalMusic")
 public class ClassicalMusic implements Music{

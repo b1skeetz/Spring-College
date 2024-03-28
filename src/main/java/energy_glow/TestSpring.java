@@ -1,11 +1,15 @@
 package energy_glow;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
-                "applicationContext.xml"
+//        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+//                "applicationContext.xml"
+//        );
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+                SpringConfig.class
         );
 
 //        ClassicalMusic music = applicationContext.getBean("musicBeanClassic", ClassicalMusic.class);
@@ -21,7 +25,7 @@ public class TestSpring {
 //
 //        Owner owner = applicationContext.getBean("petOwner", Owner.class);
 //        System.out.println(owner.getAnimal().voice());
-        MusicPlayer player = applicationContext.getBean("myMusicPlayer", MusicPlayer.class);
+        MusicPlayer player = applicationContext.getBean("musicPlayer", MusicPlayer.class);
         System.out.println(player.getName());
         System.out.println(player.getVolume());
 

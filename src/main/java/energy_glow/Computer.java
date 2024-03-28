@@ -5,7 +5,7 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @Getter
 @Setter
 public class Computer {
@@ -13,7 +13,7 @@ public class Computer {
     private MusicPlayer musicPlayer;
     private Genre genre = Genre.ROCK;
 
-    @Autowired
+    //@Autowired
     public Computer(MusicPlayer musicPlayer) {
         this.id = 1;
         this.musicPlayer = musicPlayer;
@@ -21,6 +21,6 @@ public class Computer {
 
     @Override
     public String toString() {
-        return String.format("Computer %d: \n%s", id, musicPlayer.playMusic(genre));
+        return String.format("Computer %d: \n%s", id, musicPlayer.playMusic());
     }
 }

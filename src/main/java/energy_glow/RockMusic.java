@@ -1,5 +1,6 @@
 package energy_glow;
 
+import lombok.ToString;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+@ToString
 @Component
 @Qualifier("rockMusic")
 public class RockMusic implements Music{
@@ -16,9 +18,5 @@ public class RockMusic implements Music{
     @Override
     public String getSong() {
         return songs.get(random.nextInt(songs.size()));
-    }
-    @Override
-    public String toString() {
-        return getSong();
     }
 }

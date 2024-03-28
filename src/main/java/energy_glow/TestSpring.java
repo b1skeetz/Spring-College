@@ -21,8 +21,14 @@ public class TestSpring {
 //
 //        Owner owner = applicationContext.getBean("petOwner", Owner.class);
 //        System.out.println(owner.getAnimal().voice());
-//        MusicPlayer player = applicationContext.getBean("myMusicPlayer", MusicPlayer.class);
-//        System.out.println(player.playMusic());
+        MusicPlayer player = applicationContext.getBean("myMusicPlayer", MusicPlayer.class);
+        System.out.println(player.getName());
+        System.out.println(player.getVolume());
+
+        ClassicalMusic classicalMusic1 = applicationContext.getBean("classicalMusic", ClassicalMusic.class);
+        ClassicalMusic classicalMusic2 = applicationContext.getBean("classicalMusic", ClassicalMusic.class);
+        System.out.println(classicalMusic2 == classicalMusic1);
+
 
         Computer computer = applicationContext.getBean("computer", Computer.class);
         System.out.println(computer);

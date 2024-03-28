@@ -1,8 +1,10 @@
 package energy_glow;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier("classicalMusic")
 public class ClassicalMusic implements Music{
     private String song = "Moonlight Sonata";
     public void doMyInit(){

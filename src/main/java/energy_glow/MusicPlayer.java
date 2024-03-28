@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Getter
@@ -11,18 +12,18 @@ import org.springframework.stereotype.Component;
 @ToString
 @Component("myMusicPlayer")
 public class MusicPlayer {
-    private ClassicalMusic classicalMusic;
-    private RockMusic rockMusic;
+    private Music classicalMusic;
+    private Music rockMusic;
     private String name;
     private int volume;
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusic, @Qualifier("rockMusic") Music rockMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
     }
 
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, String name, int volume) {
+    public MusicPlayer(Music classicalMusic, Music rockMusic, String name, int volume) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
         this.name = name;
